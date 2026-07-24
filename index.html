@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     SEO META TAGS
+     ============================================================ -->
+<title>Visit Chennai | Official Tourism Guide to Beaches, Temples & Culture</title>
+<meta name="description" content="Plan your Chennai trip: Marina Beach, Kapaleeshwarar Temple, Fort St. George, Margazhi music season, T. Nagar shopping and authentic filter coffee. The complete Visit Chennai travel guide.">
+<meta name="keywords" content="Chennai tourism, Visit Chennai, Marina Beach, Kapaleeshwarar Temple, Fort St George, Mylapore, T Nagar shopping, Margazhi season, Chennai temples, Chennai travel guide, Tamil Nadu tourism">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.visitchennai.example.com/">
+<meta name="author" content="Visit Chennai Tourism Board">
+
+<!-- Open Graph / Social Preview Tags -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Visit Chennai">
+<meta property="og:title" content="Visit Chennai | Official Tourism Guide">
+<meta property="og:description" content="Beaches, temples, heritage, arts and food — discover Chennai, the cultural capital of South India.">
+<meta property="og:image" content="https://picsum.photos/seed/chennai-marina-og/1200/630">
+<meta property="og:url" content="https://www.visitchennai.example.com/">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter / X Card Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Visit Chennai | Official Tourism Guide">
+<meta name="twitter:description" content="Beaches, temples, heritage, arts and food — discover Chennai, the cultural capital of South India.">
+<meta name="twitter:image" content="https://picsum.photos/seed/chennai-marina-og/1200/630">
+
+<!-- Fonts: Fraunces (display) / Inter (body) / JetBrains Mono (utility/labels) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     JSON-LD STRUCTURED DATA — Organization + TouristDestination
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Visit Chennai",
+      "url": "https://www.visitchennai.example.com/",
+      "logo": "https://picsum.photos/seed/visit-chennai-logo/200/200",
+      "sameAs": [
+        "https://www.instagram.com/chennaidiaries90?igsh=cTdod3F6MGpnaDFq",
+        "https://www.facebook.com/share/199zsX8nsy/?mibextid=wwXIfr",
+        "https://x.com/chennaistoolm4?s=11"
+      ]
+    },
+    {
+      "@type": "TouristDestination",
+      "name": "Chennai",
+      "description": "Chennai, the capital of Tamil Nadu, is a coastal metropolis known for Marina Beach, centuries-old temples, Dravidian heritage architecture, the Margazhi classical arts season and South Indian cuisine.",
+      "url": "https://www.visitchennai.example.com/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.0827,
+        "longitude": 80.2707
+      },
+      "touristType": ["Beach tourism", "Heritage tourism", "Cultural tourism", "Culinary tourism"],
+      "includesAttraction": [
+        { "@type": "TouristAttraction", "name": "Marina Beach" },
+        { "@type": "TouristAttraction", "name": "Kapaleeshwarar Temple" },
+        { "@type": "TouristAttraction", "name": "Fort St. George" },
+        { "@type": "TouristAttraction", "name": "San Thome Basilica" },
+        { "@type": "TouristAttraction", "name": "DakshinaChitra Heritage Village" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   Palette drawn from Chennai's own materials: temple gopuram
+   red stone, Bay of Bengal teal, turmeric/kumkum gold used in
+   festivals, rice-flour kolam cream, and banana-leaf green.
+   ============================================================ */
+:root{
+  --ink:        #1A1410;
+  --ink-soft:   #43362E;
+  --gopuram:    #A8322D;
+  --gopuram-dk: #7E2420;
+  --bay:        #0E6E7D;
+  --bay-dk:     #0A4F5A;
+  --turmeric:   #D9A441;
+  --leaf:       #3F5D3A;
+  --cream:      #F5EFE3;
+  --cream-dk:   #EAE1CD;
+  --white:      #FFFDFA;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius: 4px;
+  --shadow: 0 10px 30px rgba(26,20,16,0.12);
+  --container: 1240px;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+.container{ max-width: var(--container); margin:0 auto; padding:0 24px; }
+.eyebrow{
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bay-dk);
+}
+h1,h2,h3{ font-family: var(--font-display); color: var(--ink); font-weight: 600; }
+h1{ font-size: clamp(2.4rem, 5vw, 4.2rem); line-height:1.05; font-weight:700; }
+h2{ font-size: clamp(1.8rem, 3vw, 2.6rem); line-height:1.15; }
+h3{ font-size: 1.15rem; line-height:1.3; }
+.visually-hidden{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0,0,0,0); white-space:nowrap;
+}
+:focus-visible{ outline: 3px solid var(--turmeric); outline-offset: 2px; }
+
+/* ---------- Kolam motif (signature element) ----------
+   A repeating dot-grid rendered in CSS radial-gradients,
+   echoing the rice-flour kolam patterns drawn on Chennai
+   doorsteps at dawn. Used sparingly as a section signature. */
+.kolam-band{
+  height: 14px;
+  background-image: radial-gradient(circle, var(--turmeric) 1.6px, transparent 1.6px);
+  background-size: 16px 16px;
+  background-position: center;
+  opacity: 0.55;
+}
+.kolam-divider{ width:100%; }
+
+/* ---------- Header / Nav ---------- */
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  /* Premium frosted-glass background */
+  background: rgba(255, 253, 250, 0.85); 
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(26, 20, 16, 0.06);
+  box-shadow: 0 8px 32px rgba(26, 20, 16, 0.04);
+  transition: all 0.3s ease;
+}
+
+.nav-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0; /* Slightly more padding for breathing room */
+  gap: 20px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.logo span { color: var(--gopuram); }
+
+.primary-nav { display: none; }
+.primary-nav ul { display: flex; gap: 28px; align-items: center; }
+.primary-nav > ul > li { position: relative; }
+
+/* Elegant Typography for Nav Links */
+.nav-link {
+  font-family: var(--font-body);
+  font-weight: 700; 
+  font-size: 0.85rem; 
+  text-transform: uppercase; /* Makes words look official/premium */
+  letter-spacing: 0.08em; /* Spacing between letters */
+  color: var(--ink-soft);
+  padding: 8px 0;
+  display: flex; align-items: center;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.nav-link:hover, .has-dropdown:hover .nav-link, .has-dropdown:focus-within .nav-link { 
+  color: var(--gopuram); 
+  border-bottom: 2px solid var(--gopuram); 
+}
+
+/* Polished Dropdown Menus (Shows on hover) */
+.dropdown {
+  position: absolute; top: 100%; left: 50%; 
+  transform: translateX(-50%) translateY(12px); /* Centers the dropdown */
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.08);
+  border: 1px solid rgba(26,20,16,0.05);
+  border-radius: 8px;
+  padding: 12px 0;
+  min-width: 240px;
+  opacity: 0; visibility: hidden; 
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(4px);
+}
+.dropdown li a { 
+  display: block; padding: 12px 24px; font-size: 0.9rem; 
+  color: var(--ink-soft); font-weight: 500; 
+  transition: all 0.2s ease;
+}
+.dropdown li a:hover { 
+  background: rgba(168, 50, 45, 0.04); /* Very soft red highlight */
+  color: var(--gopuram); 
+  padding-left: 28px; /* Gentle indent animation on hover */
+}
+
+/* Action Icons */
+.nav-actions { display: flex; align-items: center; gap: 16px; }
+.search-form {
+  display: flex; align-items: center;
+  background: var(--white);
+  border: 1px solid var(--cream-dk);
+  border-radius: 999px;
+  padding: 6px 6px 6px 14px;
+}
+.search-form input {
+  border: none; outline: none; background: transparent;
+  font-family: var(--font-body); font-size: 0.85rem; width: 140px;
+}
+.search-form button {
+  border: none; background: var(--gopuram); color: var(--white);
+  width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.search-form button:hover { background: var(--gopuram-dk); }
+.social-icons { display: flex; gap: 10px; }
+.social-icons a {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid var(--ink); display: flex; align-items: center; justify-content: center;
+  color: var(--ink); transition: all 0.15s ease;
+}
+.social-icons a:hover { background: var(--ink); color: var(--cream); }
+.social-icons a svg { width: 16px; height: 16px; fill: currentColor; }
+.menu-toggle {
+  background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--ink);
+}
+
+@media (min-width: 960px) {
+  .primary-nav { display: block; }
+  .menu-toggle { display: none; }
+}
+/* Mobile nav panel */
+.mobile-nav{
+  display:none; flex-direction:column; gap:4px;
+  padding: 10px 24px 20px;
+  border-top: 1px solid var(--cream-dk);
+}
+.mobile-nav.open{ display:flex; }
+.mobile-nav details summary{ font-weight:600; padding:10px 0; cursor:pointer; }
+.mobile-nav details a{ display:block; padding:8px 0 8px 14px; font-size:0.92rem; color: var(--ink-soft); }
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  min-height: 84vh;
+  display:flex; align-items:flex-end;
+  background: linear-gradient(180deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.75) 100%),
+              url('https://picsum.photos/seed/chennai-hero-marina/1600/1000') center/cover no-repeat;
+  color: var(--white);
+}
+.hero-content{ padding: 60px 0 64px; max-width: 760px; }
+.hero .eyebrow{ color: var(--turmeric); }
+.hero h1{ color: var(--white); margin: 10px 0 18px; }
+.hero p{ font-size: 1.1rem; max-width: 560px; color: var(--cream); margin-bottom: 28px; }
+.hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 13px 26px; border-radius: 999px;
+  font-weight:600; font-size:0.92rem; cursor:pointer; border:2px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover{ transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+.btn-primary{ background: var(--gopuram); color: var(--white); }
+.btn-outline{ background: transparent; color: var(--white); border-color: var(--white); }
+.btn-dark{ background: var(--ink); color: var(--white); }
+
+/* ---------- Section shell ---------- */
+.section{ padding: 72px 0; }
+.section-head{
+  display:flex; justify-content:space-between; align-items:flex-end;
+  gap: 24px; margin-bottom: 34px; flex-wrap:wrap;
+}
+.section-head .eyebrow{ margin-bottom:8px; display:block; }
+.section-head p.lede{ max-width:520px; color: var(--ink-soft); }
+.section-alt{ background: var(--white); }
+
+/* ---------- Card grid ---------- */
+.card-grid{
+  display:grid; gap: 26px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
+.card{
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: 0 4px 14px rgba(26,20,16,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display:flex; flex-direction:column;
+}
+.card:hover{ transform: translateY(-6px); box-shadow: var(--shadow); }
+.card-media{ position:relative; aspect-ratio: 4/3; overflow:hidden; background: var(--cream-dk); }
+.card-media img{
+  width:100%; height:100%; object-fit:cover;
+  transition: transform 0.4s ease;
+}
+.card:hover .card-media img{ transform: scale(1.06); }
+.card-tag{
+  position:absolute; top:12px; left:12px;
+  background: rgba(26,20,16,0.75); color:var(--white);
+  font-family: var(--font-mono); font-size:0.66rem; letter-spacing:0.06em;
+  text-transform:uppercase; padding: 4px 9px; border-radius: 999px;
+}
+.card-body{ padding: 18px 18px 20px; flex:1; display:flex; flex-direction:column; }
+.card-body h3{ margin-bottom:8px; }
+.card-body p{ font-size:0.9rem; color: var(--ink-soft); flex:1; }
+.card-meta{
+  margin-top:12px; display:flex; flex-wrap:wrap; gap:6px;
+}
+.chip{
+  font-family: var(--font-mono); font-size:0.66rem;
+  background: var(--cream); color: var(--bay-dk);
+  padding: 4px 9px; border-radius: 999px; text-transform:uppercase; letter-spacing:0.04em;
+}
+
+/* ---------- Sidebar social widget ---------- */
+.follow-widget{
+  background: var(--bay);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 34px 28px;
+  text-align:center;
+  margin-top: 20px;
+}
+.follow-widget h3{ color:var(--white); margin-bottom:8px; }
+.follow-widget p{ font-size:0.9rem; color: rgba(255,255,255,0.85); margin-bottom:18px; }
+.follow-widget .social-icons a{ border-color: rgba(255,255,255,0.6); color: var(--white); }
+.follow-widget .social-icons{ justify-content:center; }
+.follow-widget .social-icons a:hover{ background: var(--white); color: var(--bay-dk); }
+
+/* ---------- Stats strip (modern chennai) ---------- */
+.stats-strip{
+  display:grid; gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  margin-top: 30px;
+}
+.stat{
+  background: var(--cream);
+  border-left: 3px solid var(--gopuram);
+  padding: 18px 20px;
+}
+.stat .num{ font-family: var(--font-display); font-size:1.6rem; font-weight:700; color: var(--gopuram); }
+.stat .label{ font-family: var(--font-mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; color: var(--ink-soft); }
+
+/* ---------- Footer ---------- */
+.site-footer{ background: var(--ink); color: var(--cream); padding: 60px 0 24px; }
+.footer-grid{
+  display:grid; gap: 36px;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  margin-bottom: 40px;
+}
+.footer-grid h3{ color:var(--white); font-size:0.95rem; margin-bottom:14px; }
+.footer-grid p{ color: rgba(245,239,227,0.7); font-size:0.88rem; }
+.footer-grid ul li{ margin-bottom:9px; }
+.footer-grid ul li a{ color: rgba(245,239,227,0.8); font-size:0.88rem; }
+.footer-grid ul li a:hover{ color: var(--turmeric); }
+.footer-social{ display:flex; gap:10px; margin-top:16px; }
+.footer-social a{
+  width:34px; height:34px; border-radius:50%; border:1px solid rgba(245,239,227,0.4);
+  display:flex; align-items:center; justify-content:center; color: var(--cream);
+}
+.footer-social a:hover{ background: var(--turmeric); border-color: var(--turmeric); color: var(--ink); }
+.footer-social a svg{ width:16px; height:16px; fill:currentColor; }
+.footer-bottom{
+  border-top: 1px solid rgba(245,239,227,0.15);
+  padding-top: 20px; font-size:0.78rem; color: rgba(245,239,227,0.55);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+}
+
+@media (max-width: 760px){
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px){
+  .footer-grid{ grid-template-columns: 1fr; }
+  .search-form{ display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER / STICKY NAV
+     ============================================================ -->
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="#top" class="logo">Visit<span>Chennai</span></a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul id="primary-nav-list"><!-- populated by JS from NAV_DATA --></ul>
+    </nav>
+
+    <div class="nav-actions">
+      <form class="search-form" role="search" onsubmit="return false;">
+        <input type="search" placeholder="Search Chennai..." aria-label="Search">
+        <button type="submit" aria-label="Search">🔍</button>
+      </form>
+      <div class="social-icons" aria-label="Social media">
+        <!-- EDIT SOCIAL LINKS: see SOCIAL_LINKS object in <script> below -->
+       <a href="https://www.instagram.com/chennaidiaries90?igsh=cTdod3F6MGpnaDFq" id="ig-header" target="_blank" rel="noopener" aria-label="Instagram">
+  <svg viewBox="0 0 24 24" style="fill: url(#ig-gradient);">
+    <defs>
+      <radialGradient id="ig-gradient" r="150%" cx="30%" cy="107%">
+        <stop stop-color="#fdf497" offset="0%"></stop>
+        <stop stop-color="#fdf497" offset="5%"></stop>
+        <stop stop-color="#fd5949" offset="45%"></stop>
+        <stop stop-color="#d6249f" offset="60%"></stop>
+        <stop stop-color="#285AEB" offset="90%"></stop>
+      </radialGradient>
+    </defs>
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+  </svg>
+</a>
+        <a href="https://www.facebook.com/share/199zsX8nsy/?mibextid=wwXIfr" id="fb-header" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12"/></svg></a>
+        <a href="#" id="x-header" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-6.7L4.8 22H1.7l8.2-9.3L1 2h7l4.9 6.2L18.9 2zm-1.2 18h1.9L7.4 4h-2l12.3 16z"/></svg></a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav"><!-- populated by JS --></div>
+</header>
+
+<main id="top">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="eyebrow">Tamil Nadu · India</span>
+      <h1>Chennai, where the Bay of Bengal meets 2,000 years of temple art</h1>
+      <p>From dawn kolams on Mylapore doorsteps to filter coffee at a century-old darshini — discover the beaches, temples, heritage and flavours of South India's cultural capital.</p>
+      <div class="hero-ctas">
+        <a href="#beaches" class="btn btn-primary">Start exploring</a>
+        <a href="#food" class="btn btn-outline">Plan a food trail</a>
+      </div>
+    </div>
+  </section>
+  <div class="kolam-band kolam-divider" role="presentation"></div>
+
+  <!-- Content pillars are rendered here by JS from CHENNAI_DATA -->
+  <div id="pillars"></div>
+
+  <!-- ============================================================
+       MODERN CHENNAI STRIP
+       ============================================================ -->
+  <section class="section" id="modern" aria-labelledby="modern-h2">
+    <div class="container">
+      <span class="eyebrow">Beyond the postcard</span>
+      <h2 id="modern-h2">Modern Chennai, at a glance</h2>
+      <p class="lede" style="margin-top:10px;max-width:640px;color:var(--ink-soft);">Chennai isn't only heritage — it's one of India's fastest-growing economic hubs, nicknamed the "Detroit of India" for its auto industry and "Silicon Chennai" for its IT corridor.</p>
+      <div class="stats-strip" id="statsStrip"><!-- populated by JS --></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOLLOW / SOCIAL CTA BAND
+       ============================================================ -->
+  <section class="section section-alt">
+    <div class="container" style="max-width:720px;">
+      <div class="follow-widget">
+        <h3>Follow #VisitChennai</h3>
+        <p>Share your Marina Beach sunrise, temple gopuram shots and filter coffee moments — we repost our favourites every week.</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/chennaidiaries90?igsh=cTdod3F6MGpnaDFq" id="ig-header" target="_blank" rel="noopener" aria-label="Instagram">
+  <svg viewBox="0 0 24 24" style="fill: url(#ig-gradient);">
+    <defs>
+      <radialGradient id="ig-gradient" r="150%" cx="30%" cy="107%">
+        <stop stop-color="#fdf497" offset="0%"></stop>
+        <stop stop-color="#fdf497" offset="5%"></stop>
+        <stop stop-color="#fd5949" offset="45%"></stop>
+        <stop stop-color="#d6249f" offset="60%"></stop>
+        <stop stop-color="#285AEB" offset="90%"></stop>
+      </radialGradient>
+    </defs>
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+  </svg>
+</a>
+          <a href="#" id="fb-widget" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12"/></svg></a>
+          <a href="#" id="x-widget" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-6.7L4.8 22H1.7l8.2-9.3L1 2h7l4.9 6.2L18.9 2zm-1.2 18h1.9L7.4 4h-2l12.3 16z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3 style="font-family:var(--font-display);font-size:1.3rem;color:var(--turmeric);">VisitChennai</h3>
+        <p>The official-style travel guide to Chennai: beaches, temples, heritage, arts, food and shopping — built for the modern traveller.</p>
+        <div class="footer-social" aria-label="Social media">
+          <a href="#" id="ig-footer" target="_blank" rel="noopener" aria-label="Instagram">
+  <svg viewBox="0 0 24 24" style="fill: url(#ig-gradient);">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+  </svg>
+</a>
+          <a href="#" id="fb-footer" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12"/></svg></a>
+          <a href="#" id="x-footer" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-6.7L4.8 22H1.7l8.2-9.3L1 2h7l4.9 6.2L18.9 2zm-1.2 18h1.9L7.4 4h-2l12.3 16z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul id="footerExplore"><!-- populated by JS --></ul>
+      </div>
+      <div>
+        <h3>Plan</h3>
+        <ul>
+          <li><a href="#food">Food &amp; gastronomy trail</a></li>
+          <li><a href="#shopping">Shopping guide</a></li>
+          <li><a href="#culture">Margazhi season calendar</a></li>
+          <li><a href="#history">Heritage walks</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">Tourism board</a></li>
+          <li><a href="#">Press &amp; media</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Visit Chennai — Academic project, not an official government site.</span>
+      <span>Built for SEO &amp; social growth coursework.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ================================================================
+   1. SOCIAL MEDIA LINKS
+   Edit these three URLs and every icon/button on the page
+   (header, sidebar widget, footer) updates automatically.
+   ================================================================ */
+const SOCIAL_LINKS = {
+  instagram: "https://www.instagram.com/chennaidiaries90?igsh=cTdod3F6MGpnaDFq", // <-- INSERT INSTAGRAM LINK HERE
+  facebook:  "https://www.facebook.com/share/199zsX8nsy/?mibextid=wwXIfr",     // <-- INSERT FACEBOOK LINK HERE
+  x:         "https://x.com/chennaistoolm4?s=11"                  // <-- INSERT X LINK HERE
+};
+
+/* ================================================================
+   2. CONTENT DATA — single source of truth for the whole site.
+   To add/edit/remove a destination: change title, description,
+   image, or keywords/chips below. Nothing else needs to change —
+   the nav menu, section cards, and footer links all regenerate
+   from this array automatically.
+   ================================================================ */
+const CHENNAI_DATA = [
+  {
+    id: "beaches",
+    label: "Beaches & Nature",
+    eyebrow: "Coast & wetlands",
+    intro: "Chennai's edge meets the Bay of Bengal — long promenades, quiet fishing coves and wetlands just outside the city.",
+    items: [
+      { title: "Marina Beach", tag: "Beach", desc: "One of the world's longest urban beaches, a 6 km promenade popular at sunrise and sunset.", img: "chennai-marina-beach", iconBg: "var(--bay-dk), var(--bay)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="36" r="12"/><path d="M15 64c7-7 14-7 21 0s14 7 21 0 14-7 21 0 14 7 21 0"/><path d="M15 78c7-7 14-7 21 0s14 7 21 0 14-7 21 0 14 7 21 0"/></svg>`, chips: ["Sunrise walk","Free entry"] },
+      { title: "Elliot's Beach (Besant Nagar)", tag: "Beach", desc: "A calmer, café-lined stretch of coast favoured by locals for evening walks.", img: "chennai-elliots-beach", iconBg: "var(--bay), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 82V46"/><path d="M50 46c-14-2-22-12-22-12s12 2 22 12zM50 46c14-2 22-12 22-12s-12 2-22 12z"/><path d="M18 82h64"/></svg>`, chips: ["Cafes nearby","Evenings"] },
+      { title: "Guindy National Park", tag: "Nature", desc: "A rare city-limits national park with blackbuck, deer and a snake park inside Chennai.", img: "chennai-guindy-park", iconBg: "var(--bay-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 80C20 50 40 20 75 20 75 55 50 80 30 80z"/><path d="M30 80c10-20 25-35 45-45"/></svg>`, chips: ["Wildlife","Half-day"] },
+      { title: "Pulicat Lake", tag: "Day trip", desc: "India's second-largest brackish lagoon, a birdwatcher's day trip north of the city.", img: "chennai-pulicat-lake", iconBg: "var(--bay), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 55c6-16 16-30 16-30s6 18-2 30"/><path d="M46 30c4-5 10-6 14-3"/><circle cx="63" cy="24" r="4" fill="var(--cream)" stroke="none"/><path d="M15 78c8-8 16-8 24 0s16 8 24 0 16-8 24 0"/></svg>`, chips: ["Birdwatching","Day trip"] }
+    ]
+  },
+  {
+    id: "temples",
+    label: "Temples & Religious Sites",
+    eyebrow: "Sacred architecture",
+    intro: "Dravidian gopurams, a Portuguese-era basilica and centuries of continuous worship, all within a short drive.",
+    items: [
+      { title: "Kapaleeshwarar Temple", tag: "Temple", desc: "A landmark 7th-century Shiva temple in Mylapore, famous for its towering painted gopuram.", img: "chennai-kapaleeshwarar", iconBg: "var(--gopuram-dk), var(--gopuram)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Mylapore","Dravidian"] },
+      { title: "Parthasarathy Temple", tag: "Temple", desc: "One of Chennai's oldest structures, an 8th-century Vishnu temple in Triplicane.", img: "chennai-parthasarathy", iconBg: "var(--gopuram), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Triplicane","8th century"] },
+      { title: "San Thome Basilica", tag: "Basilica", desc: "A neo-Gothic basilica built over the tomb of St. Thomas the Apostle.", img: "chennai-san-thome", iconBg: "var(--ink), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15v55M35 35h30"/><path d="M30 80h40l-4-10H34l-4 10z"/></svg>`, chips: ["Neo-Gothic","Pilgrimage"] },
+      { title: "Vadapalani Murugan Temple", tag: "Temple", desc: "A popular Murugan shrine known for its Friday crowds and festival processions.", img: "chennai-vadapalani", iconBg: "var(--gopuram-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Murugan","Festivals"] },
+      { title: "Ashtalakshmi Temple", tag: "Temple", desc: "A coastal Besant Nagar temple honouring the eight forms of goddess Lakshmi.", img: "chennai-ashtalakshmi", iconBg: "var(--bay-dk), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="7"/><ellipse cx="50" cy="30" rx="8" ry="14"/><ellipse cx="50" cy="70" rx="8" ry="14"/><ellipse cx="30" cy="50" rx="14" ry="8"/><ellipse cx="70" cy="50" rx="14" ry="8"/></svg>`, chips: ["Besant Nagar","Coastal"] },
+      { title: "Marundeeswarar Temple", tag: "Temple", desc: "A Thiruvanmiyur temple linked to Tamil Sangam-era literature and healing legends.", img: "chennai-marundeeswarar", iconBg: "var(--gopuram), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Thiruvanmiyur","Heritage"] }
+    ]
+  },
+  {
+    id: "history",
+    label: "History & Heritage",
+    eyebrow: "Colonial & royal past",
+    intro: "From Britain's first fortress in India to Dravidian-revival civic landmarks, Chennai's layered past is walkable.",
+    items: [
+      { title: "Fort St. George", tag: "1639", desc: "The first English fortress in India, now housing a museum of Raj-era artefacts.", img: "chennai-fort-st-george", iconBg: "var(--ink), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 45v35h56V45"/><path d="M22 45l6-10h8v10M46 45v-10h8v10M66 45v-10h8l6 10"/><path d="M50 35V18M50 18l10 5-10 5-10-5 10-5z"/></svg>`, chips: ["1639","Museum"] },
+      { title: "Government Museum, Egmore", tag: "Museum", desc: "One of India's oldest museums, with a renowned bronze gallery and archaeology wing.", img: "chennai-egmore-museum", iconBg: "var(--gopuram-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 38l32-18 32 18"/><path d="M22 38v40M38 38v40M50 38v40M62 38v40M78 38v40"/><path d="M15 82h70"/></svg>`, chips: ["Bronzes","Archaeology"] },
+      { title: "DakshinaChitra Heritage Village", tag: "Heritage", desc: "A living-museum campus of relocated traditional houses from across South India.", img: "chennai-dakshinachitra", iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 50L50 25l30 25"/><path d="M28 50v32h44V50"/><path d="M42 82V62h16v20"/></svg>`, chips: ["Living museum","Crafts"] },
+      { title: "Senate House", tag: "Landmark", desc: "The University of Madras's Indo-Saracenic centrepiece, an architectural icon.", img: "chennai-senate-house", iconBg: "var(--bay-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M35 40a15 15 0 0 1 30 0"/><path d="M28 40h44M50 15v10M24 82V45h52v37"/><path d="M18 82h64"/></svg>`, chips: ["Indo-Saracenic","Campus"] }
+    ]
+  },
+  {
+    id: "culture",
+    label: "Arts & Culture",
+    eyebrow: "Living classical tradition",
+    intro: "Chennai hosts the world's largest classical arts festival and a year-round circuit of music, dance and street art.",
+    items: [
+      { title: "Margazhi Season", tag: "Dec – Jan", desc: "A month-long Carnatic music and Bharatanatyam festival held across the city's sabhas.", img: "chennai-margazhi-season", iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 18c-10 8-10 20 0 28 10-8 10-20 0-28z"/><path d="M50 46v10M32 82c4-14 10-20 18-20s14 6 18 20"/><circle cx="50" cy="62" r="4" fill="var(--cream)" stroke="none"/><path d="M22 82h56"/></svg>`, chips: ["Dec–Jan","Carnatic"] },
+      { title: "Kalakshetra Foundation", tag: "Institution", desc: "A renowned academy for Bharatanatyam dance and traditional arts, founded in 1936.", img: "chennai-kalakshetra", iconBg: "var(--gopuram-dk), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 20c-3 10 0 20 0 30M38 25c0 10 4 18 8 22M62 25c0 10-4 18-8 22"/><path d="M35 55c5 12 8 27 8 27h14s3-15 8-27"/><path d="M30 82h40"/></svg>`, chips: ["Dance","1936"] },
+      { title: "Sabha Performance Halls", tag: "Venues", desc: "Institutions like the Music Academy and Narada Gana Sabha host classical performances year-round.", img: "chennai-sabha-halls", iconBg: "var(--bay-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="40" y="18" width="20" height="30" rx="10"/><path d="M30 42a20 20 0 0 0 40 0M50 62v14M40 82h20"/></svg>`, chips: ["Music Academy","Narada Gana Sabha"] },
+      { title: "Kolam Art & Street Traditions", tag: "Folk art", desc: "Geometric rice-flour patterns drawn fresh every dawn on Chennai's doorsteps.", img: "chennai-kolam-art", iconBg: "var(--gopuram), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="var(--cream)" stroke="var(--cream)" stroke-width="2"><circle cx="30" cy="30" r="4"/><circle cx="50" cy="30" r="4"/><circle cx="70" cy="30" r="4"/><circle cx="30" cy="50" r="4"/><circle cx="50" cy="50" r="4"/><circle cx="70" cy="50" r="4"/><circle cx="30" cy="70" r="4"/><circle cx="50" cy="70" r="4"/><circle cx="70" cy="70" r="4"/><path d="M30 30c10 10 10 20 20 20s10-10 20-20" fill="none" stroke-width="3"/></svg>`, chips: ["Daily ritual","Folk art"] }
+    ]
+  },
+  {
+    id: "food",
+    label: "Food & Gastronomy",
+    eyebrow: "Filter coffee & street food",
+    intro: "Chennai's food culture runs from century-old darshinis to after-dark street stalls.",
+    items: [
+      { title: "Filter Coffee at Rayar's Mess", tag: "Darshini", desc: "A legendary Mylapore eatery serving strong filter coffee and idli since decades.", img: "chennai-rayars-mess", iconBg: "var(--gopuram-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 40h36l-4 34a6 6 0 0 1-6 5.4H42a6 6 0 0 1-6-5.4L32 40z"/><path d="M68 46h6a8 8 0 0 1 0 16h-7"/><path d="M40 28c0-4 4-5 4-9s-3-5-3-9M52 28c0-4 4-5 4-9s-3-5-3-9M64 28c0-4 3-5 3-9" stroke-width="3"/></svg>`, chips: ["Mylapore","Filter coffee"] },
+      { title: "Karpagambal Mess", tag: "Darshini", desc: "A no-frills institution near Kapaleeshwarar Temple, famous with early-morning regulars.", img: "chennai-karpagambal-mess", iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="55" rx="32" ry="10"/><ellipse cx="38" cy="48" rx="10" ry="7"/><ellipse cx="58" cy="46" rx="10" ry="7"/><ellipse cx="50" cy="58" rx="10" ry="7"/></svg>`, chips: ["Breakfast","Local favourite"] },
+      { title: "Kothu Parotta Stalls", tag: "Street food", desc: "Shredded parotta stir-fried with egg, meat or vegetables on a sizzling roadside tawa.", img: "chennai-kothu-parotta", iconBg: "var(--ink), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="45" cy="50" rx="26" ry="10"/><path d="M71 50h16"/><path d="M30 45c4-3 8-3 12 0s8 3 12 0 8-3 12 0"/></svg>`, chips: ["Street food","Evenings"] },
+      { title: "Sundal & Bhel Carts", tag: "Street food", desc: "Beachfront legume snacks and spiced puffed rice, best eaten at Marina Beach.", img: "chennai-sundal-bhel", iconBg: "var(--bay-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 48h56a28 20 0 0 1-56 0z"/><path d="M30 48c2-14 8-22 20-22s18 8 20 22"/></svg>`, chips: ["Beachfront","Snacks"] }
+    ]
+  },
+  {
+    id: "shopping",
+    label: "Shopping",
+    eyebrow: "Silk, spice & street markets",
+    intro: "From silk saree emporiums to flower markets that open before sunrise, Chennai shops with its own rhythm.",
+    items: [
+      { title: "T. Nagar (Pondy Bazaar)", tag: "District", desc: "Chennai's densest shopping district — silk sarees, gold jewellery and street stalls.", img: "chennai-t-nagar", iconBg: "var(--turmeric), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 20c0 20 8 20 8 40s-8 20-8 40M45 20c0 20 8 20 8 40s-8 20-8 40M60 20c0 20 8 20 8 40s-8 20-8 40"/></svg>`, chips: ["Silk sarees","Jewellery"] },
+      { title: "Mylapore Market Lanes", tag: "Market", desc: "Narrow lanes near the temple selling fresh flowers and kolam powder at dawn.", img: "chennai-mylapore-market", iconBg: "var(--gopuram-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="7"/><ellipse cx="50" cy="30" rx="8" ry="14"/><ellipse cx="50" cy="70" rx="8" ry="14"/><ellipse cx="30" cy="50" rx="14" ry="8"/><ellipse cx="70" cy="50" rx="14" ry="8"/></svg>`, chips: ["Flowers","Kolam powder"] },
+      { title: "Spencer Plaza", tag: "Mall", desc: "One of India's oldest shopping complexes, a mixed-era retail landmark on Anna Salai.", img: "chennai-spencer-plaza", iconBg: "var(--bay-dk), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M28 35h44l4 47H24l4-47z"/><path d="M38 35v-5a12 12 0 0 1 24 0v5"/></svg>`, chips: ["Anna Salai","Historic mall"] }
+    ]
+  },
+  {
+    id: "modern-hubs",
+    label: "Modern Chennai & Hubs",
+    eyebrow: "Where the city works",
+    intro: "Chennai's growth story runs alongside its heritage — a major industrial, healthcare and technology hub.",
+    items: [
+      { title: "OMR IT Corridor", tag: "Silicon Chennai", desc: "Old Mahabalipuram Road hosts one of India's largest IT and software services clusters.", img: "chennai-omr-it-corridor", iconBg: "var(--bay-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="32" y="32" width="36" height="36" rx="4"/><path d="M42 32v-10M58 32v-10M42 78v-10M58 78v-10M32 42h-10M32 58h-10M68 42h10M68 58h10"/></svg>`, chips: ["IT services","OMR"] },
+      { title: "Auto Industry Hub", tag: "Detroit of India", desc: "Home to major automobile and component manufacturers along the Chennai–Bengaluru belt.", img: "chennai-auto-industry", iconBg: "var(--gopuram-dk), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 60l6-16a8 8 0 0 1 8-5h28a8 8 0 0 1 8 5l6 16"/><path d="M18 60h64v10H18z"/><circle cx="32" cy="70" r="6"/><circle cx="68" cy="70" r="6"/></svg>`, chips: ["Manufacturing","Exports"] },
+      { title: "Healthcare & Medical Tourism", tag: "Medical hub", desc: "A leading destination for medical tourism in South Asia, with major multi-specialty hospitals.", img: "chennai-medical-tourism", iconBg: "var(--bay), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="20" width="60" height="60" rx="10"/><path d="M50 35v30M35 50h30"/></svg>`, chips: ["Medical tourism","Hospitals"] }
+    ]
+  },
+  {
+    id: "blog",
+    label: "Blog & Articles",
+    eyebrow: "Stories from Substack",
+    intro: "Long-form Chennai stories, published on Substack — click any card to read the full article.",
+    items: [
+      { title: "The Last of Chennai's Filter Kaapi Shops", tag: "Food", desc: "A walk through Mylapore's oldest darshinis, where the coffee is still brewed the slow way.", chips: ["Food","Mylapore"], iconBg: "var(--gopuram-dk), var(--ink)", icon: `<svg width="86" height="86" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 40h36l-4 34a6 6 0 0 1-6 5.4H42a6 6 0 0 1-6-5.4L32 40z"/><path d="M68 46h6a8 8 0 0 1 0 16h-7"/><path d="M40 28c0-4 4-5 4-9s-3-5-3-9M52 28c0-4 4-5 4-9s-3-5-3-9M64 28c0-4 3-5 3-9" stroke-width="3"/></svg>`,
+        body: [
+          "Long before espresso machines arrived in Chennai, there was the filter kaapi — a two-tumbler ritual of chicory-laced decoction, boiled milk, and a theatrical pour that aerates the coffee into a froth. Walk through Mylapore before 7 a.m. and you'll still find it happening exactly the way it did fifty years ago, at darshinis (small, stand-up eateries) that never bothered to modernize because they never needed to.",
+          "Places like Rayar's Mess and Karpagambal Mess have been serving the same combination — filter coffee alongside idli, vada, and kesari — since before Chennai was even called Chennai. The coffee itself comes from a steel filter with two chambers: fine coffee-chicory grounds sit on top, hot water drips through slowly, and the resulting decoction is mixed with hot milk in a ratio every household argues about.",
+          "Beyond the traditional darshinis, Chennai's food scene has also modernized without losing the thread — filter coffee now shows up in specialty cafés across Nungambakkam and Adyar, sometimes served cold-brewed or with jaggery instead of sugar. But for the real experience, the stainless-steel tumbler-and-dabarah set is still the one to order.",
+          "Where to go: Rayar's Mess (Mylapore), Karpagambal Mess (Mylapore), Sangeetha (multiple locations), or any roadside filter coffee stall near a bus stand — often the best ones have no sign at all."
+        ]
+      },
+      { title: "Margazhi Season: Inside the Sabha Circuit", tag: "Culture", desc: "How a single December month turns Chennai into the world's biggest classical arts festival.", chips: ["Culture","December"], iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="86" height="86" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M50 18c-10 8-10 20 0 28 10-8 10-20 0-28z"/><path d="M50 46v10M32 82c4-14 10-20 18-20s14 6 18 20" /><circle cx="50" cy="62" r="4" fill="var(--cream)" stroke="none"/><path d="M22 82h56" /></svg>`,
+        body: [
+          "Every December, something happens in Chennai that has no real equivalent anywhere else in the world: for about six weeks, the city hosts thousands of live performances of Carnatic music and Bharatanatyam dance, spread across more than a hundred sabhas — membership halls built specifically for classical arts, some over a century old.",
+          "This is Margazhi, named after the Tamil month it falls in. It isn't a single festival with one stage; it's a decentralized season where organizations like the Music Academy, Krishna Gana Sabha, and Narada Gana Sabha run overlapping schedules, often several concerts a day, featuring everyone from veteran vocalists to teenagers performing their debut recital (arangetram).",
+          "For a visitor, the appeal isn't just the performances — it's the density of it. You can start the morning at a lecture-demonstration, catch a Bharatanatyam recital by early afternoon, and end the night at a late Carnatic vocal concert, all within a few kilometers of each other in the Mylapore–T. Nagar belt. Many sabhas welcome walk-in audiences for a modest ticket price, and some events are free.",
+          "Good to know: most sabha schedules are published in local papers and on sabha websites by late November. Book early for well-known performers; walk-in tickets for smaller recitals are usually easy to get."
+        ]
+      },
+      { title: "Sunset Rituals on Marina Beach", tag: "City Life", desc: "Kite-sellers, sundal vendors, and the city's evening pilgrimage to the sand.", chips: ["Marina Beach","Evenings"], iconBg: "var(--bay-dk), var(--turmeric)", icon: `<svg width="86" height="86" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="42" r="14"/><path d="M18 68c6-6 12-6 18 0s12 6 18 0 12-6 18 0 12 6 18 0" /><path d="M18 80c6-6 12-6 18 0s12 6 18 0 12-6 18 0 12 6 18 0" /></svg>`,
+        body: [
+          "Marina Beach stretches for roughly 13 kilometers along Chennai's coastline, making it one of the longest urban beaches in the world — and by 5 p.m. most days, a meaningful share of the city's population seems to be walking on it.",
+          "Unlike a resort beach, Marina isn't built for swimming (the currents are genuinely dangerous, and wading is discouraged past knee-depth). It's built for the evening ritual: families spreading mats on the sand, teenagers flying kites bought from beachfront vendors, the smell of roasted peanuts and sundal drifting past, and the low orange light hitting the Bay of Bengal at the exact hour the day's heat finally breaks.",
+          "Along the promenade you'll pass a run of landmarks that double as informal history markers — statues of Tamil literary and political figures, the old lighthouse, and the war memorial. Further down sits the Ice House, once used to store imported ice blocks in the 19th century, now a memorial to Swami Vivekananda.",
+          "Timing matters here: midday sun on Marina Beach is brutal, with no shade and hot reflective sand. It's really an evening destination, roughly 5 p.m. onward, and busiest — in a good way — on weekends."
+        ]
+      }
+    ]
+  }
+];
+
+/* ================================================================
+   3. RENDER LOGIC — you shouldn't need to touch anything below
+   this line. It builds the nav, page sections, and footer links
+   purely from CHENNAI_DATA and SOCIAL_LINKS above.
+   ================================================================ */
+
+// -- wire up every social icon on the page --
+function applySocialLinks(){
+  const map = {
+    "ig-header": SOCIAL_LINKS.instagram, "fb-header": SOCIAL_LINKS.facebook, "x-header": SOCIAL_LINKS.x,
+    "ig-widget": SOCIAL_LINKS.instagram, "fb-widget": SOCIAL_LINKS.facebook, "x-widget": SOCIAL_LINKS.x,
+    "ig-footer": SOCIAL_LINKS.instagram, "fb-footer": SOCIAL_LINKS.facebook, "x-footer": SOCIAL_LINKS.x
+  };
+  Object.entries(map).forEach(([id, url]) => {
+    const el = document.getElementById(id);
+    if(el) el.href = url;
+  });
+}
+
+// -- build the desktop dropdown nav + mobile accordion nav from CHENNAI_DATA --
+function renderNav(){
+  const listEl = document.getElementById("primary-nav-list");
+  const mobileEl = document.getElementById("mobileNav");
+
+  listEl.innerHTML = CHENNAI_DATA.map(section => `
+    <li class="has-dropdown">
+      <!-- The arrow has been removed below -->
+      <span class="nav-link" tabindex="0">${section.label}</span>
+      <ul class="dropdown">
+        ${section.items.map(item => `<li><a href="#${section.id}">${item.title}</a></li>`).join("")}
+      </ul>
+    </li>
+  `).join("");
+
+  mobileEl.innerHTML = CHENNAI_DATA.map(section => `
+    <details>
+      <summary>${section.label}</summary>
+      ${section.items.map(item => `<a href="#${section.id}">${item.title}</a>`).join("")}
+    </details>
+  `).join("");
+}			
+// -- build a <section> with a card grid for each content pillar --
+function renderPillars(){
+  const host = document.getElementById("pillars");
+  host.innerHTML = CHENNAI_DATA.map((section, i) => `
+    <section class="section ${i % 2 === 1 ? 'section-alt' : ''}" id="${section.id}" aria-labelledby="${section.id}-h2">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">${section.eyebrow}</span>
+            <h2 id="${section.id}-h2">${section.label}</h2>
+          </div>
+          <p class="lede">${section.intro}</p>
+        </div>
+        <div class="card-grid">
+          ${section.items.map((item, idx) => `
+            <article class="card" ${item.body ? `data-article-section="${section.id}" data-article-index="${idx}" style="cursor:pointer;"` : ''}>
+              <div class="card-media" ${item.icon ? `style="background:linear-gradient(135deg, ${item.iconBg || 'var(--bay-dk), var(--gopuram-dk)'});display:flex;align-items:center;justify-content:center;"` : ''}>
+                <span class="card-tag">${item.tag}</span>
+                ${item.icon ? item.icon : `<img src="https://picsum.photos/seed/${item.img}/600/450" alt="${item.title}, Chennai" loading="lazy" width="600" height="450">`}
+              </div>
+              <div class="card-body">
+                <h3>${item.title}</h3>
+                <p>${item.desc}</p>
+                <div class="card-meta">
+                  ${item.chips.map(c => `<span class="chip">${c}</span>`).join("")}
+                </div>
+                ${item.body ? `<span class="read-link" style="display:inline-block;margin-top:10px;font-size:0.8rem;color:var(--gopuram);font-weight:600;">Read article →</span>` : ''}
+              </div>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+    ${i < CHENNAI_DATA.length - 1 ? '<div class="kolam-band kolam-divider" role="presentation"></div>' : ''}
+  `).join("");
+}
+
+// -- footer "Explore" links, generated from the same data --
+function renderFooterLinks(){
+  const el = document.getElementById("footerExplore");
+  el.innerHTML = CHENNAI_DATA.slice(0,4).map(s => `<li><a href="#${s.id}">${s.label}</a></li>`).join("");
+}
+
+// -- modern Chennai stat strip --
+function renderStats(){
+  const stats = [
+    { num: "13M+", label: "Metro population" },
+    { num: "6 km", label: "Marina Beach promenade" },
+    { num: "1639", label: "Fort St. George founded" },
+    { num: "#2", label: "India's auto export hub" }
+  ];
+  document.getElementById("statsStrip").innerHTML = stats.map(s => `
+    <div class="stat"><div class="num">${s.num}</div><div class="label">${s.label}</div></div>
+  `).join("");
+}
+
+// -- mobile menu toggle --
+function wireMobileMenu(){
+  const btn = document.getElementById("menuToggle");
+  const panel = document.getElementById("mobileNav");
+  btn.addEventListener("click", () => {
+    const open = panel.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open);
+    btn.textContent = open ? "✕" : "☰";
+  });
+}
+
+// -- in-site article reader (opens blog post content in a modal, no external redirect) --
+function wireArticleModal(){
+  const modal = document.getElementById("article-modal");
+  const modalTitle = document.getElementById("article-modal-title");
+  const modalBody = document.getElementById("article-modal-body");
+  const closeBtn = document.getElementById("article-modal-close");
+
+  document.querySelectorAll("[data-article-section]").forEach(card => {
+    card.addEventListener("click", () => {
+      const section = CHENNAI_DATA.find(s => s.id === card.dataset.articleSection);
+      const item = section.items[Number(card.dataset.articleIndex)];
+      modalTitle.textContent = item.title;
+      modalBody.innerHTML = item.body.map(p => `<p>${p}</p>`).join("");
+      modal.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeModal(){
+    modal.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+}
+
+// -- init --
+document.addEventListener("DOMContentLoaded", () => {
+  applySocialLinks();
+  renderNav();
+  renderPillars();
+  renderFooterLinks();
+  renderStats();
+  wireMobileMenu();
+  wireArticleModal();
+});
+</script>
+
+<!-- In-site article reader modal: shows full blog post content without leaving the page -->
+<div id="article-modal" class="article-modal" role="dialog" aria-modal="true" aria-label="Article">
+  <div class="article-modal-inner">
+    <button id="article-modal-close" aria-label="Close article">✕</button>
+    <h2 id="article-modal-title"></h2>
+    <div id="article-modal-body"></div>
+  </div>
+</div>
+<style>
+  .article-modal{
+    position:fixed; inset:0; z-index:200; display:none;
+    background:rgba(26,20,16,0.72); backdrop-filter:blur(3px);
+    padding:5vh 5vw; overflow-y:auto;
+  }
+  .article-modal.is-open{ display:block; }
+  .article-modal-inner{
+    background:var(--cream); max-width:720px; margin:0 auto;
+    border-radius:16px; padding:2.4rem 2.2rem; position:relative;
+  }
+  .article-modal-inner h2{ font-family:var(--font-display); color:var(--ink); font-size:1.7rem; margin:0 0 1.2rem; padding-right:2rem; }
+  .article-modal-inner p{ color:var(--ink-soft); line-height:1.7; margin-bottom:1.1rem; font-size:0.98rem; }
+  #article-modal-close{
+    position:absolute; top:1.2rem; right:1.2rem; width:34px; height:34px;
+    border-radius:50%; border:1px solid rgba(26,20,16,0.2); background:none;
+    cursor:pointer; font-size:1rem; color:var(--ink);
+  }
+  #article-modal-close:hover{ background:var(--ink); color:var(--cream); }
+</style>
+</body>
+</html>
