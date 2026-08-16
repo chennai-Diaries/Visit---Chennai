@@ -428,8 +428,8 @@ h3{ font-size: 1.15rem; line-height:1.3; }
 
     <div class="nav-actions">
       <form class="search-form" role="search" onsubmit="return false;">
-        <input type="search" placeholder="Search Chennai..." aria-label="Search">
-        <button type="submit" aria-label="Search">🔍</button>
+        <input type="search" id="searchInput" placeholder="Search Chennai..." aria-label="Search" onkeyup="performSearch()">
+        <button type="button" aria-label="Search" onclick="performSearch(); return false;">🔍</button>
       </form>
       <div class="social-icons" aria-label="Social media">
         <!-- EDIT SOCIAL LINKS: see SOCIAL_LINKS object in <script> below -->
@@ -596,10 +596,10 @@ const CHENNAI_DATA = [
     eyebrow: "Coast & wetlands",
     intro: "Chennai's edge meets the Bay of Bengal — long promenades, quiet fishing coves and wetlands just outside the city.",
     items: [
-      { title: "Marina Beach", tag: "Beach", desc: "One of the world's longest urban beaches, a 6 km promenade popular at sunrise and sunset.", img: "chennai-marina-beach", iconBg: "var(--bay-dk), var(--bay)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="36" r="12"/><path d="M15 64c7-7 14-7 21 0s14 7 21 0 14-7 21 0 14 7 21 0"/><path d="M15 78c7-7 14-7 21 0s14 7 21 0 14-7 21 0 14 7 21 0"/></svg>`, chips: ["Sunrise walk","Free entry"] },
-      { title: "Elliot's Beach (Besant Nagar)", tag: "Beach", desc: "A calmer, café-lined stretch of coast favoured by locals for evening walks.", img: "chennai-elliots-beach", iconBg: "var(--bay), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 82V46"/><path d="M50 46c-14-2-22-12-22-12s12 2 22 12zM50 46c14-2 22-12 22-12s-12 2-22 12z"/><path d="M18 82h64"/></svg>`, chips: ["Cafes nearby","Evenings"] },
-      { title: "Guindy National Park", tag: "Nature", desc: "A rare city-limits national park with blackbuck, deer and a snake park inside Chennai.", img: "chennai-guindy-park", iconBg: "var(--bay-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 80C20 50 40 20 75 20 75 55 50 80 30 80z"/><path d="M30 80c10-20 25-35 45-45"/></svg>`, chips: ["Wildlife","Half-day"] },
-      { title: "Pulicat Lake", tag: "Day trip", desc: "India's second-largest brackish lagoon, a birdwatcher's day trip north of the city.", img: "chennai-pulicat-lake", iconBg: "var(--bay), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 55c6-16 16-30 16-30s6 18-2 30"/><path d="M46 30c4-5 10-6 14-3"/><circle cx="63" cy="24" r="4" fill="var(--cream)" stroke="none"/><path d="M15 78c8-8 16-8 24 0s16 8 24 0 16-8 24 0"/></svg>`, chips: ["Birdwatching","Day trip"] }
+      { title: "Marina Beach", tag: "Beach", desc: "One of the world's longest urban beaches, a 6 km promenade popular at sunrise and sunset.", img: "chennai-marina-beach", iconBg: "var(--bay-dk), var(--bay)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="36" r="12"/><path d="M15 64c7-7 14-7 21 0s14 7 21 0 14-7 21 0 14 7 21 0"/><path d="M15 78c7-7 14-7 21 0s14 7 21 0 14-7 21 0 14 7 21 0"/></svg>`, chips: ["Sunrise walk","Free entry"],  image: "images/marina.png", externalLink: "https://www.tripadvisor.com/Attraction_Review-g304556-d321279-Reviews-Marina_Beach-Chennai_Madras_Chennai_District_Tamil_Nadu.html" },
+      { title: "Elliot's Beach (Besant Nagar)", tag: "Beach", desc: "A calmer, café-lined stretch of coast favoured by locals for evening walks.", img: "chennai-elliots-beach", iconBg: "var(--bay), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 82V46"/><path d="M50 46c-14-2-22-12-22-12s12 2 22 12zM50 46c14-2 22-12 22-12s-12 2-22 12z"/><path d="M18 82h64"/></svg>`, chips: ["Cafes nearby","Evenings"], image: "images/elliots.png", externalLink: "https://www.tripadvisor.com/Attraction_Review-g304556-d1785664-Reviews-or130-Besant_Nagar_Beach-Chennai_Madras_Chennai_District_Tamil_Nadu.html" },
+      { title: "Guindy National Park", tag: "Nature", desc: "A rare city-limits national park with blackbuck, deer and a snake park inside Chennai.", img: "chennai-guindy-park", iconBg: "var(--bay-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 80C20 50 40 20 75 20 75 55 50 80 30 80z"/><path d="M30 80c10-20 25-35 45-45"/></svg>`, chips: ["Wildlife","Half-day"], image: "images/Guindy.png", externalLink: "https://www.tripadvisor.com/Attraction_Review-g304556-d2651336-Reviews-Guindy_National_Park-Chennai_Madras_Chennai_District_Tamil_Nadu.html" },
+      { title: "Pulicat Lake", tag: "Day trip", desc: "India's second-largest brackish lagoon, a birdwatcher's day trip north of the city.", img: "chennai-pulicat-lake", iconBg: "var(--bay), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 55c6-16 16-30 16-30s6 18-2 30"/><path d="M46 30c4-5 10-6 14-3"/><circle cx="63" cy="24" r="4" fill="var(--cream)" stroke="none"/><path d="M15 78c8-8 16-8 24 0s16 8 24 0 16-8 24 0"/></svg>`, chips: ["Birdwatching","Day trip"], image: "images/Pulicat.png", externalLink: "https://www.tripadvisor.com/Attraction_Review-g2282646-d2706091-Reviews-Pulicat_Lake-Pulicat_Tiruvallur_District_Tamil_Nadu.html" }
     ]
   },
   {
@@ -608,12 +608,12 @@ const CHENNAI_DATA = [
     eyebrow: "Sacred architecture",
     intro: "Dravidian gopurams, a Portuguese-era basilica and centuries of continuous worship, all within a short drive.",
     items: [
-      { title: "Kapaleeshwarar Temple", tag: "Temple", desc: "A landmark 7th-century Shiva temple in Mylapore, famous for its towering painted gopuram.", img: "chennai-kapaleeshwarar", iconBg: "var(--gopuram-dk), var(--gopuram)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Mylapore","Dravidian"] },
-      { title: "Parthasarathy Temple", tag: "Temple", desc: "One of Chennai's oldest structures, an 8th-century Vishnu temple in Triplicane.", img: "chennai-parthasarathy", iconBg: "var(--gopuram), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Triplicane","8th century"] },
-      { title: "San Thome Basilica", tag: "Basilica", desc: "A neo-Gothic basilica built over the tomb of St. Thomas the Apostle.", img: "chennai-san-thome", iconBg: "var(--ink), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15v55M35 35h30"/><path d="M30 80h40l-4-10H34l-4 10z"/></svg>`, chips: ["Neo-Gothic","Pilgrimage"] },
-      { title: "Vadapalani Murugan Temple", tag: "Temple", desc: "A popular Murugan shrine known for its Friday crowds and festival processions.", img: "chennai-vadapalani", iconBg: "var(--gopuram-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Murugan","Festivals"] },
-      { title: "Ashtalakshmi Temple", tag: "Temple", desc: "A coastal Besant Nagar temple honouring the eight forms of goddess Lakshmi.", img: "chennai-ashtalakshmi", iconBg: "var(--bay-dk), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="7"/><ellipse cx="50" cy="30" rx="8" ry="14"/><ellipse cx="50" cy="70" rx="8" ry="14"/><ellipse cx="30" cy="50" rx="14" ry="8"/><ellipse cx="70" cy="50" rx="14" ry="8"/></svg>`, chips: ["Besant Nagar","Coastal"] },
-      { title: "Marundeeswarar Temple", tag: "Temple", desc: "A Thiruvanmiyur temple linked to Tamil Sangam-era literature and healing legends.", img: "chennai-marundeeswarar", iconBg: "var(--gopuram), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Thiruvanmiyur","Heritage"] }
+      { title: "Kapaleeshwarar Temple", tag: "Temple", desc: "A landmark 7th-century Shiva temple in Mylapore, famous for its towering painted gopuram.", img: "chennai-kapaleeshwarar", iconBg: "var(--gopuram-dk), var(--gopuram)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Mylapore","Dravidian"], image: "images/Kapaleeshwara.png", externalLink: "https://www.rajpark.com/alwarpet-chennai-hotel/blogs/the-magnificent-kapaleeshwarar-temple-chennai.html" },
+      { title: "Parthasarathy Temple", tag: "Temple", desc: "One of Chennai's oldest structures, an 8th-century Vishnu temple in Triplicane.", img: "chennai-parthasarathy", iconBg: "var(--gopuram), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Triplicane","8th century"], image: "images/705431335Parthasarathy_Temple_Main.png", externalLink: "https://www.trawell.in/tamilnadu/chennai/sri-parthasarathy-temple" },
+      { title: "San Thome Basilica", tag: "Basilica", desc: "A neo-Gothic basilica built over the tomb of St. Thomas the Apostle.", img: "chennai-san-thome", iconBg: "var(--ink), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15v55M35 35h30"/><path d="M30 80h40l-4-10H34l-4 10z"/></svg>`, chips: ["Neo-Gothic","Pilgrimage"], image: "images/san-thome-church-chennai.png", externalLink: "https://www.tripadvisor.in/Attraction_Review-g304556-d325357-Reviews-Santhome_Cathedral_Basilica-Chennai_Madras_Chennai_District_Tamil_Nadu.html" },
+      { title: "Vadapalani Murugan Temple", tag: "Temple", desc: "A popular Murugan shrine known for its Friday crowds and festival processions.", img: "chennai-vadapalani", iconBg: "var(--gopuram-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Murugan","Festivals"], image: "images/786367642Chennai_Vadapalani_Murugan_Temple_Main.png", externalLink: "https://www.trawell.in/tamilnadu/chennai/vadapalani-murugan-temple" },
+      { title: "Ashtalakshmi Temple", tag: "Temple", desc: "A coastal Besant Nagar temple honouring the eight forms of goddess Lakshmi.", img: "chennai-ashtalakshmi", iconBg: "var(--bay-dk), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="7"/><ellipse cx="50" cy="30" rx="8" ry="14"/><ellipse cx="50" cy="70" rx="8" ry="14"/><ellipse cx="30" cy="50" rx="14" ry="8"/><ellipse cx="70" cy="50" rx="14" ry="8"/></svg>`, chips: ["Besant Nagar","Coastal"], image: "images/Ashta.png", externalLink: "https://www.incredibleindia.gov.in/en/tamil-nadu/chennai/ashtalakshmi-temple" },
+      { title: "Marundeeswarar Temple", tag: "Temple", desc: "A Thiruvanmiyur temple linked to Tamil Sangam-era literature and healing legends.", img: "chennai-marundeeswarar", iconBg: "var(--gopuram), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 15l8 12H42l8-12z"/><path d="M38 27h24l4 14H34l4-14z"/><path d="M30 41h40l5 16H25l5-16z"/><path d="M22 57h56l6 23H16l6-23z"/></svg>`, chips: ["Thiruvanmiyur","Heritage"], image: "images/Sri-Marundeeswarar-Temple.png",externalLink: "https://hindugallery.com/sri-marundeeswarar-temple-thiruvanmiyur-chennai/" }
     ]
   },
   {
@@ -622,10 +622,10 @@ const CHENNAI_DATA = [
     eyebrow: "Colonial & royal past",
     intro: "From Britain's first fortress in India to Dravidian-revival civic landmarks, Chennai's layered past is walkable.",
     items: [
-      { title: "Fort St. George", tag: "1639", desc: "The first English fortress in India, now housing a museum of Raj-era artefacts.", img: "chennai-fort-st-george", iconBg: "var(--ink), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 45v35h56V45"/><path d="M22 45l6-10h8v10M46 45v-10h8v10M66 45v-10h8l6 10"/><path d="M50 35V18M50 18l10 5-10 5-10-5 10-5z"/></svg>`, chips: ["1639","Museum"] },
-      { title: "Government Museum, Egmore", tag: "Museum", desc: "One of India's oldest museums, with a renowned bronze gallery and archaeology wing.", img: "chennai-egmore-museum", iconBg: "var(--gopuram-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 38l32-18 32 18"/><path d="M22 38v40M38 38v40M50 38v40M62 38v40M78 38v40"/><path d="M15 82h70"/></svg>`, chips: ["Bronzes","Archaeology"] },
-      { title: "DakshinaChitra Heritage Village", tag: "Heritage", desc: "A living-museum campus of relocated traditional houses from across South India.", img: "chennai-dakshinachitra", iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 50L50 25l30 25"/><path d="M28 50v32h44V50"/><path d="M42 82V62h16v20"/></svg>`, chips: ["Living museum","Crafts"] },
-      { title: "Senate House", tag: "Landmark", desc: "The University of Madras's Indo-Saracenic centrepiece, an architectural icon.", img: "chennai-senate-house", iconBg: "var(--bay-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M35 40a15 15 0 0 1 30 0"/><path d="M28 40h44M50 15v10M24 82V45h52v37"/><path d="M18 82h64"/></svg>`, chips: ["Indo-Saracenic","Campus"] }
+      { title: "Fort St. George", tag: "1639", desc: "The first English fortress in India, now housing a museum of Raj-era artefacts.", img: "chennai-fort-st-george", iconBg: "var(--ink), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 45v35h56V45"/><path d="M22 45l6-10h8v10M46 45v-10h8v10M66 45v-10h8l6 10"/><path d="M50 35V18M50 18l10 5-10 5-10-5 10-5z"/></svg>`, chips: ["1639","Museum"], image: "images/fort.png", externalLink: "https://www.tripadvisor.in/Attraction_Review-g304556-d325067-Reviews-Fort_St_George-Chennai_Madras_Chennai_District_Tamil_Nadu.html" },
+      { title: "Government Museum, Egmore", tag: "Museum", desc: "One of India's oldest museums, with a renowned bronze gallery and archaeology wing.", img: "chennai-egmore-museum", iconBg: "var(--gopuram-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 38l32-18 32 18"/><path d="M22 38v40M38 38v40M50 38v40M62 38v40M78 38v40"/><path d="M15 82h70"/></svg>`, chips: ["Bronzes","Archaeology"], image: "images/government-museum.png", externalLink: "https://www.tripadvisor.in/Attraction_Review-g304556-d325410-Reviews-Government_Museum-Chennai_Madras_Chennai_District_Tamil_Nadu.html" },
+      { title: "DakshinaChitra Heritage Village", tag: "Heritage", desc: "A living-museum campus of relocated traditional houses from across South India.", img: "chennai-dakshinachitra", iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 50L50 25l30 25"/><path d="M28 50v32h44V50"/><path d="M42 82V62h16v20"/></svg>`, chips: ["Living museum","Crafts"], image: "images/dakshina.png", externalLink: "https://www.dakshinachitra.net/" },
+      { title: "Senate House", tag: "Landmark", desc: "The University of Madras's Indo-Saracenic centrepiece, an architectural icon.", img: "chennai-senate-house", iconBg: "var(--bay-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M35 40a15 15 0 0 1 30 0"/><path d="M28 40h44M50 15v10M24 82V45h52v37"/><path d="M18 82h64"/></svg>`, chips: ["Indo-Saracenic","Campus"], image: "images/A13227-The-Senate-House-Chennai-1-770x515.png", externalLink: "https://www.re-thinkingthefuture.com/case-studies/a13227-the-senate-house-chennai/" }
     ]
   },
   {
@@ -634,10 +634,10 @@ const CHENNAI_DATA = [
     eyebrow: "Living classical tradition",
     intro: "Chennai hosts the world's largest classical arts festival and a year-round circuit of music, dance and street art.",
     items: [
-      { title: "Margazhi Season", tag: "Dec – Jan", desc: "A month-long Carnatic music and Bharatanatyam festival held across the city's sabhas.", img: "chennai-margazhi-season", iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 18c-10 8-10 20 0 28 10-8 10-20 0-28z"/><path d="M50 46v10M32 82c4-14 10-20 18-20s14 6 18 20"/><circle cx="50" cy="62" r="4" fill="var(--cream)" stroke="none"/><path d="M22 82h56"/></svg>`, chips: ["Dec–Jan","Carnatic"] },
-      { title: "Kalakshetra Foundation", tag: "Institution", desc: "A renowned academy for Bharatanatyam dance and traditional arts, founded in 1936.", img: "chennai-kalakshetra", iconBg: "var(--gopuram-dk), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 20c-3 10 0 20 0 30M38 25c0 10 4 18 8 22M62 25c0 10-4 18-8 22"/><path d="M35 55c5 12 8 27 8 27h14s3-15 8-27"/><path d="M30 82h40"/></svg>`, chips: ["Dance","1936"] },
-      { title: "Sabha Performance Halls", tag: "Venues", desc: "Institutions like the Music Academy and Narada Gana Sabha host classical performances year-round.", img: "chennai-sabha-halls", iconBg: "var(--bay-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="40" y="18" width="20" height="30" rx="10"/><path d="M30 42a20 20 0 0 0 40 0M50 62v14M40 82h20"/></svg>`, chips: ["Music Academy","Narada Gana Sabha"] },
-      { title: "Kolam Art & Street Traditions", tag: "Folk art", desc: "Geometric rice-flour patterns drawn fresh every dawn on Chennai's doorsteps.", img: "chennai-kolam-art", iconBg: "var(--gopuram), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="var(--cream)" stroke="var(--cream)" stroke-width="2"><circle cx="30" cy="30" r="4"/><circle cx="50" cy="30" r="4"/><circle cx="70" cy="30" r="4"/><circle cx="30" cy="50" r="4"/><circle cx="50" cy="50" r="4"/><circle cx="70" cy="50" r="4"/><circle cx="30" cy="70" r="4"/><circle cx="50" cy="70" r="4"/><circle cx="70" cy="70" r="4"/><path d="M30 30c10 10 10 20 20 20s10-10 20-20" fill="none" stroke-width="3"/></svg>`, chips: ["Daily ritual","Folk art"] }
+      { title: "Margazhi Season", tag: "Dec – Jan", desc: "A month-long Carnatic music and Bharatanatyam festival held across the city's sabhas.", img: "chennai-margazhi-season", iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 18c-10 8-10 20 0 28 10-8 10-20 0-28z"/><path d="M50 46v10M32 82c4-14 10-20 18-20s14 6 18 20"/><circle cx="50" cy="62" r="4" fill="var(--cream)" stroke="none"/><path d="M22 82h56"/></svg>`, chips: ["Dec–Jan","Carnatic"], image: "images/margazhi-the-worlds-largest-music-festival.png", externalLink: "https://ragarasa.in/resources/margazhi-the-worlds-largest-music-festival" },
+      { title: "Kalakshetra Foundation", tag: "Institution", desc: "A renowned academy for Bharatanatyam dance and traditional arts, founded in 1936.", img: "chennai-kalakshetra", iconBg: "var(--gopuram-dk), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 20c-3 10 0 20 0 30M38 25c0 10 4 18 8 22M62 25c0 10-4 18-8 22"/><path d="M35 55c5 12 8 27 8 27h14s3-15 8-27"/><path d="M30 82h40"/></svg>`, chips: ["Dance","1936"], image: "images/kalashetra.png", externalLink: "https://kalakshetra.in/" },
+      { title: "Sabha Performance Halls", tag: "Venues", desc: "Institutions like the Music Academy and Narada Gana Sabha host classical performances year-round.", img: "chennai-sabha-halls", iconBg: "var(--bay-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="40" y="18" width="20" height="30" rx="10"/><path d="M30 42a20 20 0 0 0 40 0M50 62v14M40 82h20"/></svg>`, chips: ["Music Academy","Narada Gana Sabha"], image: "images/narada ghana.png", externalLink: "https://www.justdial.com/Chennai/Narada-Gana-Sabha-Near-Sankara-Hall-Alwarpet/044P3005521_BZDET" },
+      { title: "Kolam Art & Street Traditions", tag: "Folk art", desc: "Geometric rice-flour patterns drawn fresh every dawn on Chennai's doorsteps.", img: "chennai-kolam-art", iconBg: "var(--gopuram), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="var(--cream)" stroke="var(--cream)" stroke-width="2"><circle cx="30" cy="30" r="4"/><circle cx="50" cy="30" r="4"/><circle cx="70" cy="30" r="4"/><circle cx="30" cy="50" r="4"/><circle cx="50" cy="50" r="4"/><circle cx="70" cy="50" r="4"/><circle cx="30" cy="70" r="4"/><circle cx="50" cy="70" r="4"/><circle cx="70" cy="70" r="4"/><path d="M30 30c10 10 10 20 20 20s10-10 20-20" fill="none" stroke-width="3"/></svg>`, chips: ["Daily ritual","Folk art"], image: "images/1_-Group-of-kolam-artists-on-front-step-1024x912.png", externalLink: "https://massculturalcouncil.org/blog/kolam-art-an-afternoon-with-tamil-makkal-mandram/" }
     ]
   },
   {
@@ -646,10 +646,10 @@ const CHENNAI_DATA = [
     eyebrow: "Filter coffee & street food",
     intro: "Chennai's food culture runs from century-old darshinis to after-dark street stalls.",
     items: [
-      { title: "Filter Coffee at Rayar's Mess", tag: "Darshini", desc: "A legendary Mylapore eatery serving strong filter coffee and idli since decades.", img: "chennai-rayars-mess", iconBg: "var(--gopuram-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 40h36l-4 34a6 6 0 0 1-6 5.4H42a6 6 0 0 1-6-5.4L32 40z"/><path d="M68 46h6a8 8 0 0 1 0 16h-7"/><path d="M40 28c0-4 4-5 4-9s-3-5-3-9M52 28c0-4 4-5 4-9s-3-5-3-9M64 28c0-4 3-5 3-9" stroke-width="3"/></svg>`, chips: ["Mylapore","Filter coffee"] },
-      { title: "Karpagambal Mess", tag: "Darshini", desc: "A no-frills institution near Kapaleeshwarar Temple, famous with early-morning regulars.", img: "chennai-karpagambal-mess", iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="55" rx="32" ry="10"/><ellipse cx="38" cy="48" rx="10" ry="7"/><ellipse cx="58" cy="46" rx="10" ry="7"/><ellipse cx="50" cy="58" rx="10" ry="7"/></svg>`, chips: ["Breakfast","Local favourite"] },
-      { title: "Kothu Parotta Stalls", tag: "Street food", desc: "Shredded parotta stir-fried with egg, meat or vegetables on a sizzling roadside tawa.", img: "chennai-kothu-parotta", iconBg: "var(--ink), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="45" cy="50" rx="26" ry="10"/><path d="M71 50h16"/><path d="M30 45c4-3 8-3 12 0s8 3 12 0 8-3 12 0"/></svg>`, chips: ["Street food","Evenings"] },
-      { title: "Sundal & Bhel Carts", tag: "Street food", desc: "Beachfront legume snacks and spiced puffed rice, best eaten at Marina Beach.", img: "chennai-sundal-bhel", iconBg: "var(--bay-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 48h56a28 20 0 0 1-56 0z"/><path d="M30 48c2-14 8-22 20-22s18 8 20 22"/></svg>`, chips: ["Beachfront","Snacks"] }
+      { title: "Filter Coffee at Rayar's Mess", tag: "Darshini", desc: "A legendary Mylapore eatery serving strong filter coffee and idli since decades.", img: "chennai-rayars-mess", iconBg: "var(--gopuram-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 40h36l-4 34a6 6 0 0 1-6 5.4H42a6 6 0 0 1-6-5.4L32 40z"/><path d="M68 46h6a8 8 0 0 1 0 16h-7"/><path d="M40 28c0-4 4-5 4-9s-3-5-3-9M52 28c0-4 4-5 4-9s-3-5-3-9M64 28c0-4 3-5 3-9" stroke-width="3"/></svg>`, chips: ["Mylapore","Filter coffee"], image: "images/rayar.png", externalLink: "https://www.tripadvisor.in/Restaurant_Review-g304556-d5908787-Reviews-Rayar_s_Mess-Chennai_Madras_Chennai_District_Tamil_Nadu.html" },
+      { title: "Karpagambal Mess", tag: "Darshini", desc: "A no-frills institution near Kapaleeshwarar Temple, famous with early-morning regulars.", img: "chennai-karpagambal-mess", iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="50" cy="55" rx="32" ry="10"/><ellipse cx="38" cy="48" rx="10" ry="7"/><ellipse cx="58" cy="46" rx="10" ry="7"/><ellipse cx="50" cy="58" rx="10" ry="7"/></svg>`, chips: ["Breakfast","Local favourite"], image: "images/Karpagambal-Mess.png", externalLink: "https://www.chennaionline.in/guide/the-legendary-mylai-karpagambal-mess" },
+      { title: "Kothu Parotta Stalls", tag: "Street food", desc: "Shredded parotta stir-fried with egg, meat or vegetables on a sizzling roadside tawa.", img: "chennai-kothu-parotta", iconBg: "var(--ink), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="45" cy="50" rx="26" ry="10"/><path d="M71 50h16"/><path d="M30 45c4-3 8-3 12 0s8 3 12 0 8-3 12 0"/></svg>`, chips: ["Street food","Evenings"], image: "images/kottu paratha.png", externalLink: "https://www.slurrp.com/article/kothu-parotta-fan-dont-miss-these-top-10-restaurants-in-chennai-1679395601678" },
+      { title: "Sundal & Bhel Carts", tag: "Street food", desc: "Beachfront legume snacks and spiced puffed rice, best eaten at Marina Beach.", img: "chennai-sundal-bhel", iconBg: "var(--bay-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 48h56a28 20 0 0 1-56 0z"/><path d="M30 48c2-14 8-22 20-22s18 8 20 22"/></svg>`, chips: ["Beachfront","Snacks"], image: "images/Bhel Carts.png" }
     ]
   },
   {
@@ -658,9 +658,9 @@ const CHENNAI_DATA = [
     eyebrow: "Silk, spice & street markets",
     intro: "From silk saree emporiums to flower markets that open before sunrise, Chennai shops with its own rhythm.",
     items: [
-      { title: "T. Nagar (Pondy Bazaar)", tag: "District", desc: "Chennai's densest shopping district — silk sarees, gold jewellery and street stalls.", img: "chennai-t-nagar", iconBg: "var(--turmeric), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 20c0 20 8 20 8 40s-8 20-8 40M45 20c0 20 8 20 8 40s-8 20-8 40M60 20c0 20 8 20 8 40s-8 20-8 40"/></svg>`, chips: ["Silk sarees","Jewellery"] },
-      { title: "Mylapore Market Lanes", tag: "Market", desc: "Narrow lanes near the temple selling fresh flowers and kolam powder at dawn.", img: "chennai-mylapore-market", iconBg: "var(--gopuram-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="7"/><ellipse cx="50" cy="30" rx="8" ry="14"/><ellipse cx="50" cy="70" rx="8" ry="14"/><ellipse cx="30" cy="50" rx="14" ry="8"/><ellipse cx="70" cy="50" rx="14" ry="8"/></svg>`, chips: ["Flowers","Kolam powder"] },
-      { title: "Spencer Plaza", tag: "Mall", desc: "One of India's oldest shopping complexes, a mixed-era retail landmark on Anna Salai.", img: "chennai-spencer-plaza", iconBg: "var(--bay-dk), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M28 35h44l4 47H24l4-47z"/><path d="M38 35v-5a12 12 0 0 1 24 0v5"/></svg>`, chips: ["Anna Salai","Historic mall"] }
+      { title: "T. Nagar (Pondy Bazaar)", tag: "District", desc: "Chennai's densest shopping district — silk sarees, gold jewellery and street stalls.", img: "chennai-t-nagar", iconBg: "var(--turmeric), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 20c0 20 8 20 8 40s-8 20-8 40M45 20c0 20 8 20 8 40s-8 20-8 40M60 20c0 20 8 20 8 40s-8 20-8 40"/></svg>`, chips: ["Silk sarees","Jewellery"], image: "images/pondi bazar.png", externalLink: "https://www.tripadvisor.in/Attraction_Review-g304556-d8431476-Reviews-Pondy_Bazaar-Chennai_Madras_Chennai_District_Tamil_Nadu.html" },
+      { title: "Mylapore Market Lanes", tag: "Market", desc: "Narrow lanes near the temple selling fresh flowers and kolam powder at dawn.", img: "chennai-mylapore-market", iconBg: "var(--gopuram-dk), var(--turmeric)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="7"/><ellipse cx="50" cy="30" rx="8" ry="14"/><ellipse cx="50" cy="70" rx="8" ry="14"/><ellipse cx="30" cy="50" rx="14" ry="8"/><ellipse cx="70" cy="50" rx="14" ry="8"/></svg>`, chips: ["Flowers","Kolam powder"], image: "images/myalpore.png", externalLink: "https://indianbazaars.blogspot.com/2010/07/mylapore-temple-bazaar-chennai.html" },
+      { title: "Spencer Plaza", tag: "Mall", desc: "One of India's oldest shopping complexes, a mixed-era retail landmark on Anna Salai.", img: "chennai-spencer-plaza", iconBg: "var(--bay-dk), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M28 35h44l4 47H24l4-47z"/><path d="M38 35v-5a12 12 0 0 1 24 0v5"/></svg>`, chips: ["Anna Salai","Historic mall"], image: "images/spencer.png", externalLink: "https://www.tripadvisor.in/Attraction_Review-g304556-d321278-Reviews-Spencer_Plaza-Chennai_Madras_Chennai_District_Tamil_Nadu.html" }
     ]
   },
   {
@@ -669,9 +669,9 @@ const CHENNAI_DATA = [
     eyebrow: "Where the city works",
     intro: "Chennai's growth story runs alongside its heritage — a major industrial, healthcare and technology hub.",
     items: [
-      { title: "OMR IT Corridor", tag: "Silicon Chennai", desc: "Old Mahabalipuram Road hosts one of India's largest IT and software services clusters.", img: "chennai-omr-it-corridor", iconBg: "var(--bay-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="32" y="32" width="36" height="36" rx="4"/><path d="M42 32v-10M58 32v-10M42 78v-10M58 78v-10M32 42h-10M32 58h-10M68 42h10M68 58h10"/></svg>`, chips: ["IT services","OMR"] },
-      { title: "Auto Industry Hub", tag: "Detroit of India", desc: "Home to major automobile and component manufacturers along the Chennai–Bengaluru belt.", img: "chennai-auto-industry", iconBg: "var(--gopuram-dk), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 60l6-16a8 8 0 0 1 8-5h28a8 8 0 0 1 8 5l6 16"/><path d="M18 60h64v10H18z"/><circle cx="32" cy="70" r="6"/><circle cx="68" cy="70" r="6"/></svg>`, chips: ["Manufacturing","Exports"] },
-      { title: "Healthcare & Medical Tourism", tag: "Medical hub", desc: "A leading destination for medical tourism in South Asia, with major multi-specialty hospitals.", img: "chennai-medical-tourism", iconBg: "var(--bay), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="20" width="60" height="60" rx="10"/><path d="M50 35v30M35 50h30"/></svg>`, chips: ["Medical tourism","Hospitals"] }
+      { title: "OMR IT Corridor", tag: "Silicon Chennai", desc: "Old Mahabalipuram Road hosts one of India's largest IT and software services clusters.", img: "chennai-omr-it-corridor", iconBg: "var(--bay-dk), var(--ink)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="32" y="32" width="36" height="36" rx="4"/><path d="M42 32v-10M58 32v-10M42 78v-10M58 78v-10M32 42h-10M32 58h-10M68 42h10M68 58h10"/></svg>`, chips: ["IT services","OMR"], image: "images/Why-OMR-is-Chennais-most-preferred-IT-corridor.png", externalLink: "https://chennai1.in/why-omr-is-chennais-most-preferred-it-corridor/" },
+      { title: "Auto Industry Hub", tag: "Detroit of India", desc: "Home to major automobile and component manufacturers along the Chennai–Bengaluru belt.", img: "chennai-auto-industry", iconBg: "var(--gopuram-dk), var(--bay-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 60l6-16a8 8 0 0 1 8-5h28a8 8 0 0 1 8 5l6 16"/><path d="M18 60h64v10H18z"/><circle cx="32" cy="70" r="6"/><circle cx="68" cy="70" r="6"/></svg>`, chips: ["Manufacturing","Exports"], image: "images/Chennai-The-Detroit-of-Asia.png", externalLink: "https://www.stmpl.co.in/chennai-a-automotive-powerhouse-the-detroit-of-asia/" },
+      { title: "Healthcare & Medical Tourism", tag: "Medical hub", desc: "A leading destination for medical tourism in South Asia, with major multi-specialty hospitals.", img: "chennai-medical-tourism", iconBg: "var(--bay), var(--gopuram-dk)", icon: `<svg width="72" height="72" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="20" width="60" height="60" rx="10"/><path d="M50 35v30M35 50h30"/></svg>`, chips: ["Medical tourism","Hospitals"], image: "images/Is-Chennai-South-Asias-next-big-Medical-Tourism-destination-1200x545_c.png", externalLink: "https://www.kauveryhospital.com/blog/kauvery-special/is-chennai-south-asias-next-big-medical-tourism-destination/" }
     ]
   },
   {
@@ -686,7 +686,7 @@ const CHENNAI_DATA = [
           "Places like Rayar's Mess and Karpagambal Mess have been serving the same combination — filter coffee alongside idli, vada, and kesari — since before Chennai was even called Chennai. The coffee itself comes from a steel filter with two chambers: fine coffee-chicory grounds sit on top, hot water drips through slowly, and the resulting decoction is mixed with hot milk in a ratio every household argues about.",
           "Beyond the traditional darshinis, Chennai's food scene has also modernized without losing the thread — filter coffee now shows up in specialty cafés across Nungambakkam and Adyar, sometimes served cold-brewed or with jaggery instead of sugar. But for the real experience, the stainless-steel tumbler-and-dabarah set is still the one to order.",
           "Where to go: Rayar's Mess (Mylapore), Karpagambal Mess (Mylapore), Sangeetha (multiple locations), or any roadside filter coffee stall near a bus stand — often the best ones have no sign at all."
-        ]
+        ], image: "images/coffeee.png"
       },
       { 
         title: "Mylapore: Temples, Streets, and Old Madras", 
@@ -699,7 +699,7 @@ const CHENNAI_DATA = [
           "If Chennai has a historic core, it’s Mylapore — a neighbourhood old enough that some records place settlement there before Chennai (then Madras) existed as a colonial city at all. Its center of gravity is the Kapaleeshwarar Temple, a Dravidian-style temple dedicated to Shiva, with a towering gopuram (gateway tower) covered in painted deity sculptures that’s visible above the surrounding rooftops from several streets away. Mylapore rewards slow walking rather than a checklist.", 
 "The temple tank, the narrow lanes selling flowers, kolam powder, and silk for weddings, and the Sri Kapaleeshwarar temple’s own courtyard rituals all run on a rhythm that hasn’t changed much in decades. Nearby, San Thome Basilica — built over the tomb believed to hold the remains of St. Thomas theApostle — adds a second, very different layer of religious history within walking distance. For a wider view of Chennai’s founding story, Fort St. George is the place to go.", 
 "Built in 1639 by the British East India Company, it was the first English fortress in India and effectively the seed around which the rest of Chennai grew. Today it houses the Tamil Nadu Legislative Assembly and a museum with colonial-era artifacts, uniforms, and the flag flown at India’s independence ceremony in the fort. It’s a short trip from Mylapore and pairs naturally with a half-day covering both the city’s spiritual and colonial histories. Practical tip: dress modestly for temple visits (shoulders and knees covered), and expect to remove footwear before entering — most temples have a stand for this outside."
-        ]
+        ], image: "images/myalopre.png"
       },
       { title: "Margazhi Season: Inside the Sabha Circuit", tag: "Culture", desc: "How a single December month turns Chennai into the world's biggest classical arts festival.", chips: ["Culture","December"], iconBg: "var(--turmeric), var(--gopuram-dk)", icon: `<svg width="86" height="86" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M50 18c-10 8-10 20 0 28 10-8 10-20 0-28z"/><path d="M50 46v10M32 82c4-14 10-20 18-20s14 6 18 20" /><circle cx="50" cy="62" r="4" fill="var(--cream)" stroke="none"/><path d="M22 82h56" /></svg>`,
         body: [
@@ -707,7 +707,7 @@ const CHENNAI_DATA = [
           "This is Margazhi, named after the Tamil month it falls in. It isn't a single festival with one stage; it's a decentralized season where organizations like the Music Academy, Krishna Gana Sabha, and Narada Gana Sabha run overlapping schedules, often several concerts a day, featuring everyone from veteran vocalists to teenagers performing their debut recital (arangetram).",
           "For a visitor, the appeal isn't just the performances — it's the density of it. You can start the morning at a lecture-demonstration, catch a Bharatanatyam recital by early afternoon, and end the night at a late Carnatic vocal concert, all within a few kilometers of each other in the Mylapore–T. Nagar belt. Many sabhas welcome walk-in audiences for a modest ticket price, and some events are free.",
           "Good to know: most sabha schedules are published in local papers and on sabha websites by late November. Book early for well-known performers; walk-in tickets for smaller recitals are usually easy to get."
-        ]
+        ], image: "images/Marghazi.png"
       },
       { title: "Sunset Rituals on Marina Beach", tag: "City Life", desc: "Kite-sellers, sundal vendors, and the city's evening pilgrimage to the sand.", chips: ["Marina Beach","Evenings"], iconBg: "var(--bay-dk), var(--turmeric)", icon: `<svg width="86" height="86" viewBox="0 0 100 100" fill="none" stroke="var(--cream)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="42" r="14"/><path d="M18 68c6-6 12-6 18 0s12 6 18 0 12-6 18 0 12 6 18 0" /><path d="M18 80c6-6 12-6 18 0s12 6 18 0 12-6 18 0 12 6 18 0" /></svg>`,
         body: [
@@ -715,7 +715,7 @@ const CHENNAI_DATA = [
           "Unlike a resort beach, Marina isn't built for swimming (the currents are genuinely dangerous, and wading is discouraged past knee-depth). It's built for the evening ritual: families spreading mats on the sand, teenagers flying kites bought from beachfront vendors, the smell of roasted peanuts and sundal drifting past, and the low orange light hitting the Bay of Bengal at the exact hour the day's heat finally breaks.",
           "Along the promenade you'll pass a run of landmarks that double as informal history markers — statues of Tamil literary and political figures, the old lighthouse, and the war memorial. Further down sits the Ice House, once used to store imported ice blocks in the 19th century, now a memorial to Swami Vivekananda.",
           "Timing matters here: midday sun on Marina Beach is brutal, with no shade and hot reflective sand. It's really an evening destination, roughly 5 p.m. onward, and busiest — in a good way — on weekends."
-        ]
+        ], image: "images/sunset.png"
       }
     ]
   }
@@ -777,10 +777,10 @@ function renderPillars(){
         </div>
         <div class="card-grid">
           ${section.items.map((item, idx) => `
-            <article class="card" ${item.body ? `data-article-section="${section.id}" data-article-index="${idx}" style="cursor:pointer;"` : ''}>
+            <article class="card" ${item.body || item.externalLink ? `data-article-section="${section.id}" data-article-index="${idx}" style="cursor:pointer;"` : ''}>
               <div class="card-media" ${item.icon ? `style="background:linear-gradient(135deg, ${item.iconBg || 'var(--bay-dk), var(--gopuram-dk)'});display:flex;align-items:center;justify-content:center;"` : ''}>
                 <span class="card-tag">${item.tag}</span>
-                ${item.icon ? item.icon : `<img src="https://picsum.photos/seed/${item.img}/600/450" alt="${item.title}, Chennai" loading="lazy" width="600" height="450">`}
+                ${item.image ? `<img src="${item.image}" alt="${item.title}" class="card-image" />` : ''}
               </div>
               <div class="card-body">
                 <h3>${item.title}</h3>
@@ -789,6 +789,7 @@ function renderPillars(){
                   ${item.chips.map(c => `<span class="chip">${c}</span>`).join("")}
                 </div>
                 ${item.body ? `<span class="read-link" style="display:inline-block;margin-top:10px;font-size:0.8rem;color:var(--gopuram);font-weight:600;">Read article →</span>` : ''}
+                ${item.externalLink ? `<span class="read-link" style="display:inline-block;margin-top:10px;font-size:0.8rem;color:var(--bay);font-weight:600;">Learn more ↗</span>` : ''}
               </div>
             </article>
           `).join("")}
@@ -829,7 +830,60 @@ function wireMobileMenu(){
   });
 }
 
+// -- search functionality: filter cards and sections based on search input --
+function performSearch(){
+  const searchInput = document.getElementById("searchInput").value.toLowerCase().trim();
+  const cards = document.querySelectorAll(".card");
+  const sections = document.querySelectorAll(".section[id]");
+  let hasResults = false;
+
+  if(!searchInput){
+    // Show all cards and sections if search is empty
+    cards.forEach(card => card.style.display = "");
+    sections.forEach(section => section.style.display = "");
+    return;
+  }
+
+  sections.forEach(section => {
+    let sectionHasVisibleCards = false;
+    const sectionCards = section.querySelectorAll(".card");
+    
+    sectionCards.forEach(card => {
+      const title = card.querySelector("h3")?.textContent.toLowerCase() || "";
+      const desc = card.querySelector(".card-body p")?.textContent.toLowerCase() || "";
+      const chips = Array.from(card.querySelectorAll(".chip")).map(c => c.textContent.toLowerCase()).join(" ");
+      const tag = card.querySelector(".card-tag")?.textContent.toLowerCase() || "";
+      
+      const matchesSearch = title.includes(searchInput) || 
+                           desc.includes(searchInput) || 
+                           chips.includes(searchInput) || 
+                           tag.includes(searchInput);
+      
+      if(matchesSearch){
+        card.style.display = "";
+        sectionHasVisibleCards = true;
+        hasResults = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+    
+    // Hide section if no cards match
+    if(sectionHasVisibleCards){
+      section.style.display = "";
+    } else {
+      section.style.display = "none";
+    }
+  });
+
+  // Optional: show a message if no results found
+  if(!hasResults){
+    console.log("No results found for: " + searchInput);
+  }
+}
+
 // -- in-site article reader (opens blog post content in a modal, no external redirect) --
+// -- also handles external links for beaches and nature items --
 function wireArticleModal(){
   const modal = document.getElementById("article-modal");
   const modalTitle = document.getElementById("article-modal-title");
@@ -840,10 +894,20 @@ function wireArticleModal(){
     card.addEventListener("click", () => {
       const section = CHENNAI_DATA.find(s => s.id === card.dataset.articleSection);
       const item = section.items[Number(card.dataset.articleIndex)];
-      modalTitle.textContent = item.title;
-      modalBody.innerHTML = item.body.map(p => `<p>${p}</p>`).join("");
-      modal.classList.add("is-open");
-      document.body.style.overflow = "hidden";
+      
+      // If item has an external link, open it in a new tab
+      if(item.externalLink){
+        window.open(item.externalLink, "_blank", "noopener,noreferrer");
+        return;
+      }
+      
+      // Otherwise, show the article modal
+      if(item.body){
+        modalTitle.textContent = item.title;
+        modalBody.innerHTML = item.body.map(p => `<p>${p}</p>`).join("");
+        modal.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      }
     });
   });
 
